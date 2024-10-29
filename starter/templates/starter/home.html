@@ -1,0 +1,35 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'style/style.css' %}"></link>
+
+
+</head>
+<body>
+    
+<h1 >hello world</h1>
+
+
+{% for product in products %}
+<h2>{{product.title}}</h2>
+<h3>{{product.description}}</h3>
+<p>{{product.price}}</p>
+<a  href="{% url 'update_product' product.id  %}">Update</a>
+<a  href="{% url 'delete_product' product.id  %}">Delete</a>
+
+
+{% endfor %}
+    
+
+
+
+
+<script src="{% static 'javascript/mine.js' %}"></script>
+</body>
+</html>
+
+
